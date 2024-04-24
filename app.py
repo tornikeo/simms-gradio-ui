@@ -23,7 +23,6 @@ def preprocess_spectra(spectra: List[Spectrum]) -> Spectrum:
         spectrum = normalize_intensities(spectrum)
         spectrum = select_by_relative_intensity(spectrum, intensity_from=0.001)
         spectrum = reduce_to_number_of_peaks(spectrum, n_max=1024)
-        spectrum = require_minimum_number_of_peaks(spectrum, n_required=5)
         return spectrum
     
     spectra = list(process_spectrum(s) for s in spectra) # Some might be None
