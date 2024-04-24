@@ -1,12 +1,13 @@
 FROM pytorch/pytorch:2.2.1-cuda11.8-cudnn8-devel
 
+RUN apt-get update && apt-get install -y --no-install-recommends git && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # Set the working directory to /code
 WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-# RUN apt-get update && apt-get install -y --no-install-recommends git && \
-#     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set up a new user named "user" with user ID 1000
 RUN useradd -m -u 1000 user
