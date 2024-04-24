@@ -11,4 +11,4 @@ python-dotenv
 joblib
 pytest
 cudams @ git+https://github.com/tornikeo/cudams@main
-gradip
+gradio
