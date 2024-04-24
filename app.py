@@ -103,14 +103,17 @@ def run(r_filepath:Path, q_filepath:Path,
     return score.name,  score_vis.name, pickle_.name
 
 with gr.Blocks() as demo:
-    gr.Markdown("Run Cuda Cosine Greedy on your MGF files.")
+    gr.Markdown("""
+    # CudaMS - Faster mass spectrometry
+    Calculate cosine greedy similarity matrix using CUDA. See [main repo](https://github.com/tornikeo/cudams) for this project. 
+    This approach is x100-x500 faster than [MatchMS](https://github.com/matchms/matchms/). Upload your MGF files below, or run the sample `pesticides.mgf` files against each other.
+    """)
     with gr.Row():
         refs = gr.File(label="Upload REFERENCES.mgf",
                        interactive=True,
                                value='pesticides.mgf')
         ques = gr.File(label="Upload QUERIES.mgf",
-                       interactive=True,
-                               value='pesticides.mgf')
+                       interactive=True, value='pesticides.mgf')
     with gr.Row():
             tolerance = gr.Slider(minimum=0, maximum=1, value=0.1, label="Tolerance")
             mz_power = gr.Slider(minimum=0, maximum=2, value=0.0, label="mz_power")
