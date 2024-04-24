@@ -107,10 +107,10 @@ with gr.Blocks() as demo:
     with gr.Row():
         refs = gr.File(label="Upload REFERENCES.mgf",
                        interactive=True,
-                               value='tests/data/pesticides.mgf')
+                               value='pesticides.mgf')
         ques = gr.File(label="Upload QUERIES.mgf",
                        interactive=True,
-                               value='tests/data/pesticides.mgf')
+                               value='pesticides.mgf')
     with gr.Row():
             tolerance = gr.Slider(minimum=0, maximum=1, value=0.1, label="Tolerance")
             mz_power = gr.Slider(minimum=0, maximum=2, value=0.0, label="mz_power")
