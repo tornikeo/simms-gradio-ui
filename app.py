@@ -48,7 +48,7 @@ def run(r_filepath:Path, q_filepath:Path,
     assert q_filepath is not None, "Query file is missing."
     import tempfile
     import numpy as np
-    from cudams.similarity import CudaCosineGreedy
+    from simms.similarity import CudaCosineGreedy
     from matchms.importing import load_from_mgf
     from matchms import calculate_scores
     import matplotlib.pyplot as plt
@@ -93,7 +93,6 @@ def run(r_filepath:Path, q_filepath:Path,
 
     score = tempfile.NamedTemporaryFile(suffix='.npz', delete=False)
     np.savez(score.name, scores=scores)
-
 
     import pickle
     pickle_ = tempfile.NamedTemporaryFile(suffix='.pickle', delete=False)

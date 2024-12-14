@@ -1,4 +1,4 @@
-matchms>=0.24.0
+matchms>=0.28.2
 numba
 rdkit
 pooch
@@ -9,5 +9,5 @@ pyyaml
 python-dotenv
 joblib
 pytest
-cudams @ git+https://github.com/tornikeo/cudams@main
+simms @ git+https://github.com/pangeai/simms@main
 gradio
